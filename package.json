@@ -1,0 +1,23 @@
+{
+  "name": "auto-ticketing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^24.1.2"
+  },
+  "dependencies": {
+    "node-tesseract": "^0.2.7",
+    "node-tesseract-ocr": "^2.2.1",
+    "puppeteer": "^19.11.1",
+    "puppeteer-core": "^19.11.1",
+    "puppeteer-in-electron": "^3.0.5",
+    "tesseract.js": "^4.0.3"
+  }
+}

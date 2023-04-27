@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Auto-Ticketing</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <style>
+    body {
+      margin-top: 50px;
+      margin-left: 150px;
+      margin-right: 150px;
+    }
+    input {
+      margin-right: 10px;
+    }
+    label {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="ticketing">
+    <h1>I wanna go consert</h1>
+    <br><br>
+    <div class="mb-3">
+      <label for="consertId" class="form-label">Consert ID</label>
+      <input id="consertId" class="form-control" type="text" placeholder="콘서트 ID" required="required"/>
+    </div>
+    <div class="mb-3">
+      <label for="numberPerson">numberPerson</label>
+      <input id="numberPerson" class="form-control" type="number" placeholder="몇개의 좌석을 원하시나요? (숫자만 입력)" required="required"/>
+    </div>
+    <div class="mb-3">
+      <label for="day">day</label>
+      <input id="day" class="form-control" type="number" placeholder="원하시는 관람일 (예시 :4월 28일의 경우 28 입력)" required="required"/>
+    </div>
+    <div class="mb-3">
+      <label for="userId">User ID</label>
+      <input id="userId" class="form-control" type="text" placeholder="User ID" required="required"/>
+    </div>
+    <div class="mb-3">
+      <label for="password">Password</label>
+      <input id="password" class="form-control" type="password" placeholder="Password" required="required"/>
+    </div>
+    <br>
+    <button id="ticketing" onclick="start()" class="btn btn-primary btn-block btn-large">
+      Let's go
+    </button>
+    <hr>
+    <div class="mb-3">
+      <textarea class="form-control" id="logArea" rows="3" disabled></textarea>
+    </div>
+  </div>
+  <script src="./js/function.js"></script>
+  <script>
+    function start() {
+      const consertId = document.getElementById('consertId').value;
+      const numberPerson = document.getElementById('numberPerson').value;
+      const day = document.getElementById('day').value;
+      const userId = document.getElementById('userId').value;
+      const pw = document.getElementById('password').value;
+      
+      startTicketing(consertId, numberPerson, day, userId, pw);
+    }
+  </script>
+</body>
+</html>
