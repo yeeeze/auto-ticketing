@@ -59,8 +59,15 @@
 
 ## 프로그램 사용 예시 동영상
 
-
 https://user-images.githubusercontent.com/86194303/235204525-642d4d4c-c97b-4609-8e3a-59525d16a727.MP4
+
+<br>
+
+## 사용 완료 후 로그 확인 예시 동영상
+
+https://user-images.githubusercontent.com/86194303/235206174-c8f064d4-6118-45a3-80a6-20877df25689.mp4
+
+
 
 
 
