@@ -5,12 +5,17 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy:osx": "electron-builder --mac",
+    "deploy:win": "npm run deploy:win32 && npm run deploy:win64",
+    "deploy:win32": "electron-builder --win nsis:ia32",
+    "deploy:win64": "electron-builder --win nsis:x64"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^24.1.2"
+    "electron": "^24.1.2",
+    "electron-builder": "^23.6.0"
   },
   "dependencies": {
     "node-tesseract": "^0.2.7",
@@ -19,5 +24,39 @@
     "puppeteer-core": "^19.11.1",
     "puppeteer-in-electron": "^3.0.5",
     "tesseract.js": "^4.0.3"
+  },
+  "build": {
+    "productName": "Auto-Ticketing",
+    "appId": "net.jetalab.ex.auto_ticketing",
+    "asar": true,
+    "mac": {
+        "target": [
+            "default"
+        ]
+    },
+    "dmg": {
+        "title": "Auto-Ticketing"
+    },
+    "win": {
+        "target": [
+            {
+                "target": "nsis",
+                "arch": [
+                    "x64",
+                    "ia32"
+                ]
+            }
+        ]
+    },
+    "nsis": {
+        "oneClick": false,
+        "allowToChangeInstallationDirectory": false,
+        "createDesktopShortcut": true
+    },
+    "directories": {
+        "buildResources": "./resources/installer/",
+        "output": "./dist/",
+        "app": "."
+    }
   }
 }

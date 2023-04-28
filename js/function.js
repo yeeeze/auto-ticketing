@@ -43,13 +43,13 @@ async function startTicketing(consertId, numberPerson, day, userId, pw) {
     
     // if exsited popup -> close
     const popupCloseBut = '#popup-prdGuide > div > div.popupFooter > button'
-    const closeButElement = page.$(popupCloseBut);
+    const closeButElement = await page.$(popupCloseBut);
     if(closeButElement != null) {
-        page.click(popupCloseBut);
+        await page.click(popupCloseBut);
     }
 
     // 예매 오픈 시간까지 기다리기
-    // let startTime = new Date(2023, 3, 27, 11, 59, 59);
+    // let startTime = new Date(2023, 3, 28, 11, 59, 59);
     // let now = new Date();
     // await new Promise(r => setTimeout(r, startTime.getTime() - now.getTime()));
     // page.reload();
@@ -64,13 +64,18 @@ async function startTicketing(consertId, numberPerson, day, userId, pw) {
     const daySelector = '#productSide > div > div.sideMain > div.sideContainer.containerTop.sideToggleWrap > div.sideContent.toggleCalendar > div > div > div > div > ul:nth-child(3) > li:nth-child(' + `${dayCalculate}` + ')';
     await page.waitForSelector(daySelector);
     page.click(daySelector);
-    // page.click('#productSide > div > div.sideMain > div.sideContainer.containerTop.sideToggleWrap > div.sideContent.toggleCalendar > div > div > div > div > ul:nth-child(3) > li:nth-child(21)')
+    await log.addLog("공연 관람일 클릭");
 
     // 예매하기
+    // TODO : 티켓 오픈 예정 시간 입력 받아서 처리하는 로직
+    // let startTime = new Date(2023, 3, 28, 11, 59, 59);
+    // let now = new Date();
+    // await new Promise(r => setTimeout(r, startTime.getTime() - now.getTime()));
+    // await log.addLog("end wait");
+
     const buttonSelector = '#productSide > div > div.sideBtnWrap > a.sideBtn.is-primary';
-    await page.waitForSelector(buttonSelector);
-    const newPagePromise = new Promise(x => page.once('popup', x));
     page.click(buttonSelector);
+    const newPagePromise = await new Promise(x => page.once('popup', x));
     await log.addLog("예매하기 버튼 클릭 성공");
     await page.setViewport({width: 1080, height: 1024});
     page = await newPagePromise;
