@@ -15,7 +15,7 @@
   "license": "ISC",
   "devDependencies": {
     "electron": "^24.1.2",
-    "electron-builder": "^23.6.0"
+    "electron-builder": "^24.3.0"
   },
   "dependencies": {
     "node-tesseract": "^0.2.7",
