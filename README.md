@@ -57,9 +57,12 @@
 
 <br><br>
 
-## 해당 프로그램을 사용한 예매 과정 동영상 예시
+## 프로그램 사용 예시 동영상
 
-https://user-images.githubusercontent.com/86194303/235193981-f20eca70-81f3-4014-9de7-0b377b049217.mp4
+
+https://user-images.githubusercontent.com/86194303/235204525-642d4d4c-c97b-4609-8e3a-59525d16a727.MP4
+
+
 
 
 ---
